@@ -3,9 +3,7 @@
   "version": "0.0.0",
   "description": "Simple database migration tool",
   "author": "William Sharp @wsharp07",
-  "bin": {
-    "muto": "./bin/run"
-  },
+  "bin": "./bin/run",
   "homepage": "https://github.com/wsharp07/muto",
   "license": "MIT",
   "main": "dist/index.js",
@@ -19,23 +17,23 @@
   "dependencies": {
     "@databases/mysql": "^6.0.0",
     "@databases/pg": "^5.4.1",
-    "@oclif/core": "^2",
-    "@oclif/plugin-help": "^5",
+    "@oclif/core": "^2.9.4",
+    "@oclif/plugin-help": "^5.2.14",
     "@oclif/plugin-plugins": "^3.1.7"
   },
   "devDependencies": {
     "@oclif/test": "^2.3.31",
-    "@types/chai": "^4",
+    "@types/chai": "^4.3.5",
     "@types/mocha": "^10.0.1",
     "@types/node": "^20.4.2",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
-    "chai": "^4",
+    "chai": "^4.3.7",
     "eslint": "^8.45.0",
     "eslint-config-oclif": "^4",
     "eslint-config-oclif-typescript": "^1.0.3",
     "mocha": "^10",
-    "oclif": "^3",
+    "oclif": "^3.9.1",
     "prettier": "3.0.0",
     "shx": "^0.3.4",
     "ts-node": "^10.9.1",
@@ -58,6 +56,7 @@
     }
   },
   "scripts": {
+    "dev": "npm run build && ./bin/dev",
     "build": "shx rm -rf dist && tsc -b",
     "lint": "eslint . --ext .ts --config .eslintrc",
     "postpack": "shx rm -f oclif.manifest.json",
