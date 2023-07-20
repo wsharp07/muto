@@ -1,6 +1,0 @@
-{
-  "extends": ["oclif", "oclif-typescript"],
-  "rules": {
-    "semi": [1, "always"]
-  }
-}

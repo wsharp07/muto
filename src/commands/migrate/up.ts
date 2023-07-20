@@ -2,16 +2,16 @@ import { Args, Command } from '@oclif/core';
 import { runMigration } from '../../core/migrate';
 
 export default class MigrateUp extends Command {
-  static description = 'Say hello world';
+	static description = 'Say hello world';
 
-  static examples = ['<example>'];
+	static examples = ['<example>'];
 
-  static flags = {};
+	static flags = {};
 
-  static args = {};
+	static args = {};
 
-  async run(): Promise<void> {
-    const { args } = await this.parse(MigrateUp);
-    await runMigration();
-  }
+	async run(): Promise<void> {
+		const { args } = await this.parse(MigrateUp);
+		await runMigration();
+	}
 }
