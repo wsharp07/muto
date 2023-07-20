@@ -751,7 +751,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oclif/core@npm:^2.8.4, @oclif/core@npm:^2.8.7, @oclif/core@npm:^2.9.3, @oclif/core@npm:^2.9.4":
+"@oclif/core@npm:^2.8.7, @oclif/core@npm:^2.9.3, @oclif/core@npm:^2.9.4":
   version: 2.9.4
   resolution: "@oclif/core@npm:2.9.4"
   dependencies:
@@ -789,7 +789,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oclif/plugin-help@npm:^5.1.19, @oclif/plugin-help@npm:^5.2.14":
+"@oclif/plugin-help@npm:^5.2.14":
   version: 5.2.14
   resolution: "@oclif/plugin-help@npm:5.2.14"
   dependencies:
@@ -798,7 +798,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oclif/plugin-not-found@npm:^2.3.7":
+"@oclif/plugin-not-found@npm:^2.3.32":
   version: 2.3.32
   resolution: "@oclif/plugin-not-found@npm:2.3.32"
   dependencies:
@@ -831,7 +831,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oclif/plugin-warn-if-update-available@npm:^2.0.14":
+"@oclif/plugin-warn-if-update-available@npm:^2.0.44":
   version: 2.0.44
   resolution: "@oclif/plugin-warn-if-update-available@npm:2.0.44"
   dependencies:
@@ -1831,8 +1831,8 @@ __metadata:
   linkType: hard
 
 "aws-sdk@npm:^2.1231.0":
-  version: 2.1418.0
-  resolution: "aws-sdk@npm:2.1418.0"
+  version: 2.1419.0
+  resolution: "aws-sdk@npm:2.1419.0"
   dependencies:
     buffer: 4.9.2
     events: 1.1.1
@@ -1844,7 +1844,7 @@ __metadata:
     util: ^0.12.4
     uuid: 8.0.0
     xml2js: 0.5.0
-  checksum: 4273a8833736418090c9aaaddb43a874225fc102e7b8141d44f0155b927144474bbad33957f92e2e5f9403eb6b30372dc3696517e476796ed45a98508c06d88e
+  checksum: 45b954be76acef99a88b21511634af0c9bba228e8bb9e0d4571983f7b5ba826a648b3cf2b09b17e541ff45e15323cf99db58b50d8b2f0caa3d74b20213afd8f8
   languageName: node
   linkType: hard
 
@@ -3927,7 +3927,7 @@ __metadata:
 
 "fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -6846,13 +6846,13 @@ __metadata:
   linkType: hard
 
 "oclif@npm:^3.9.1":
-  version: 3.9.1
-  resolution: "oclif@npm:3.9.1"
+  version: 3.9.2
+  resolution: "oclif@npm:3.9.2"
   dependencies:
-    "@oclif/core": ^2.8.4
-    "@oclif/plugin-help": ^5.1.19
-    "@oclif/plugin-not-found": ^2.3.7
-    "@oclif/plugin-warn-if-update-available": ^2.0.14
+    "@oclif/core": ^2.9.4
+    "@oclif/plugin-help": ^5.2.14
+    "@oclif/plugin-not-found": ^2.3.32
+    "@oclif/plugin-warn-if-update-available": ^2.0.44
     aws-sdk: ^2.1231.0
     concurrently: ^7.6.0
     debug: ^4.3.3
@@ -6871,7 +6871,7 @@ __metadata:
   bin:
     oclif: bin/run
     oclif2: bin/run
-  checksum: 787ab055d3edf70d1cabb83f60218ff87d63672b00578279c684f93470d77b9b944dfbccae1fbfb23b584ce8b6bedb604ebf19c4faf981ae6d359641c0eb86f0
+  checksum: 403f371eaf7f7312759ec6d6be2db200b43e7fdbde228154bccdf57967454752900b6eebbbf2d250e0200990b95b8233f8e6022f10369ece61ff8393c5f46b1d
   languageName: node
   linkType: hard
 
@@ -7985,7 +7985,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.2#~builtin<compat/resolve>":
   version: 1.22.3
-  resolution: "resolve@patch:resolve@npm%3A1.22.3#~builtin<compat/resolve>::version=1.22.3&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A1.22.3#~builtin<compat/resolve>::version=1.22.3&hash=c3c19d"
   dependencies:
     is-core-module: ^2.12.0
     path-parse: ^1.0.7
@@ -9086,11 +9086,11 @@ __metadata:
 
 "typescript@patch:typescript@^5.1.6#~builtin<compat/typescript>":
   version: 5.1.6
-  resolution: "typescript@patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=f456af"
+  resolution: "typescript@patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 21e88b0a0c0226f9cb9fd25b9626fb05b4c0f3fddac521844a13e1f30beb8f14e90bd409a9ac43c812c5946d714d6e0dee12d5d02dfc1c562c5aacfa1f49b606
+  checksum: f53bfe97f7c8b2b6d23cf572750d4e7d1e0c5fff1c36d859d0ec84556a827b8785077bc27676bf7e71fae538e517c3ecc0f37e7f593be913d884805d931bc8be
   languageName: node
   linkType: hard
 
