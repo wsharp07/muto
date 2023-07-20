@@ -1,8 +1,8 @@
+import { type IDatabaseAdapter } from '../interface';
 import createMysqlConnectionPool, {
 	type ConnectionPool,
 	sql,
 } from '@databases/mysql';
-import { type IDatabaseAdapter } from '../interface';
 
 export class MySqlDatabaseAdapter implements IDatabaseAdapter {
 	private readonly db: ConnectionPool;
