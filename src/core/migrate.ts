@@ -18,14 +18,19 @@ const createFile = (dir: string, name: string, content: string): void => {
   fs.writeFileSync(`${dir}/${name}`, content);
 };
 
-const createMigration = (name: string): void => {
+const createMigration = (
+  name: string,
+  options: { before: boolean; after: boolean }
+): void => {
   createBaseDirectory();
   const dir = `${DEFAULT_MIGRATION_DIR}/${Date.now()}-${name}`;
   createDirectory(dir);
   createFile(dir, 'up.sql', '## Write your up migration here\n');
   createFile(dir, 'down.sql', '## Write your down migration here\n');
-  createFile(dir, 'before.sql', '## Write your before migration here\n');
-  createFile(dir, 'after.sql', '## Write your after migration here\n');
+  options.before &&
+    createFile(dir, 'before.sql', '## Write your before migration here\n');
+  options.after &&
+    createFile(dir, 'after.sql', '## Write your after migration here\n');
 };
 
 const runMigration = async (): Promise<void> => {
