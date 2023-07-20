@@ -9,13 +9,13 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node_version: [lts/-1, lts/*, latest]
+        node_version: [lts/*]
       fail-fast: false
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
-        
+
       - name: Setup Node ${{ matrix.node_version }}}
         uses: actions/setup-node@v3
         with:
