@@ -1,8 +1,8 @@
+import { type IDatabaseAdapter } from '../interface';
 import createPostgresConnectionPool, {
 	type ConnectionPool,
 	sql,
 } from '@databases/pg';
-import { type IDatabaseAdapter } from '../interface';
 
 export class PostgresDatabaseAdapter implements IDatabaseAdapter {
 	private readonly db: ConnectionPool;

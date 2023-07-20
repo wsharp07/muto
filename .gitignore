@@ -6,7 +6,15 @@
 /dist
 /lib
 /tmp
-/.yarn
 node_modules
 oclif.manifest.json
 migrations
+
+# Yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

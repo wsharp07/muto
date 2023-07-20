@@ -1,5 +1,5 @@
-import { Args, Command } from '@oclif/core';
 import { createMigration } from '../../core/migrate';
+import { Args, Command } from '@oclif/core';
 
 export default class MigrateCreate extends Command {
 	static description = 'Say hello world';
