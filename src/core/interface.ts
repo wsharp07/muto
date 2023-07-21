@@ -14,8 +14,12 @@ export type DATABASE_TYPE = (typeof DATABASE_TYPE)[keyof typeof DATABASE_TYPE];
 
 export type IMigrationConfig = {
   migrationDir: string;
+  shouldCreateBeforeScript: boolean;
+  shouldCreateAfterScript: boolean;
 };
 
 export const DEFAULT_CONFIG: IMigrationConfig = {
   migrationDir: 'migrations',
+  shouldCreateBeforeScript: true,
+  shouldCreateAfterScript: true,
 };
