@@ -1,21 +1,16 @@
-# oclif-hello-world
+# Muto
 
-oclif example Hello World CLI
-
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![CircleCI](https://circleci.com/gh/oclif/hello-world/tree/main.svg?style=shield)](https://circleci.com/gh/oclif/hello-world/tree/main)
-[![GitHub license](https://img.shields.io/github/license/oclif/hello-world)](https://github.com/oclif/hello-world/blob/main/LICENSE)
+Simple NodeJS Migration Tool
 
 <!-- toc -->
-
-- [Usage](#usage)
-- [Commands](#commands)
+* [Muto](#muto)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g muto
 $ muto COMMAND
@@ -27,65 +22,22 @@ USAGE
   $ muto COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`muto hello PERSON`](#muto-hello-person)
-- [`muto hello world`](#muto-hello-world)
-- [`muto help [COMMANDS]`](#muto-help-commands)
-- [`muto plugins`](#muto-plugins)
-- [`muto plugins:install PLUGIN...`](#muto-pluginsinstall-plugin)
-- [`muto plugins:inspect PLUGIN...`](#muto-pluginsinspect-plugin)
-- [`muto plugins:install PLUGIN...`](#muto-pluginsinstall-plugin-1)
-- [`muto plugins:link PLUGIN`](#muto-pluginslink-plugin)
-- [`muto plugins:uninstall PLUGIN...`](#muto-pluginsuninstall-plugin)
-- [`muto plugins:uninstall PLUGIN...`](#muto-pluginsuninstall-plugin-1)
-- [`muto plugins:uninstall PLUGIN...`](#muto-pluginsuninstall-plugin-2)
-- [`muto plugins update`](#muto-plugins-update)
-
-## `muto hello PERSON`
-
-Say hello
-
-```
-USAGE
-  $ muto hello PERSON -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
-
-FLAGS
-  -f, --from=<value>  (required) Who is saying hello
-
-DESCRIPTION
-  Say hello
-
-EXAMPLES
-  $ oex hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
-```
-
-_See code: [dist/commands/hello/index.ts](https://github.com/wsharp07/muto/blob/v0.0.0/dist/commands/hello/index.ts)_
-
-## `muto hello world`
-
-Say hello world
-
-```
-USAGE
-  $ muto hello world
-
-DESCRIPTION
-  Say hello world
-
-EXAMPLES
-  $ muto hello world
-  hello world! (./src/commands/hello/world.ts)
-```
+* [`muto help [COMMANDS]`](#muto-help-commands)
+* [`muto migrate create NAME`](#muto-migrate-create-name)
+* [`muto plugins`](#muto-plugins)
+* [`muto plugins:install PLUGIN...`](#muto-pluginsinstall-plugin)
+* [`muto plugins:inspect PLUGIN...`](#muto-pluginsinspect-plugin)
+* [`muto plugins:install PLUGIN...`](#muto-pluginsinstall-plugin-1)
+* [`muto plugins:link PLUGIN`](#muto-pluginslink-plugin)
+* [`muto plugins:uninstall PLUGIN...`](#muto-pluginsuninstall-plugin)
+* [`muto plugins:uninstall PLUGIN...`](#muto-pluginsuninstall-plugin-1)
+* [`muto plugins:uninstall PLUGIN...`](#muto-pluginsuninstall-plugin-2)
+* [`muto plugins update`](#muto-plugins-update)
 
 ## `muto help [COMMANDS]`
 
@@ -105,7 +57,25 @@ DESCRIPTION
   Display help for muto.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.12/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.14/src/commands/help.ts)_
+
+## `muto migrate create NAME`
+
+Creates a new migration
+
+```
+USAGE
+  $ muto migrate create NAME
+
+ARGUMENTS
+  NAME  Name of the migration
+
+DESCRIPTION
+  Creates a new migration
+
+EXAMPLES
+  $ muto migrate create add-user-table
+```
 
 ## `muto plugins`
 
@@ -113,10 +83,13 @@ List installed plugins.
 
 ```
 USAGE
-  $ muto plugins [--core]
+  $ muto plugins [--json] [--core]
 
 FLAGS
   --core  Show core plugins.
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   List installed plugins.
@@ -125,7 +98,7 @@ EXAMPLES
   $ muto plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.4.7/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v3.1.7/src/commands/plugins/index.ts)_
 
 ## `muto plugins:install PLUGIN...`
 
@@ -158,7 +131,7 @@ ALIASES
   $ muto plugins add
 
 EXAMPLES
-  $ muto plugins:install myplugin
+  $ muto plugins:install myplugin 
 
   $ muto plugins:install https://github.com/someuser/someplugin
 
@@ -221,7 +194,7 @@ ALIASES
   $ muto plugins add
 
 EXAMPLES
-  $ muto plugins:install myplugin
+  $ muto plugins:install myplugin 
 
   $ muto plugins:install https://github.com/someuser/someplugin
 
@@ -339,5 +312,4 @@ FLAGS
 DESCRIPTION
   Update installed plugins.
 ```
-
 <!-- commandsstop -->
