@@ -28,7 +28,9 @@ export default class MigrateCreate extends Command {
     const { args, flags } = await this.parse(MigrateCreate);
     const config = {
       ...DEFAULT_CONFIG,
+      shouldCreateBeforeScript: flags.before,
+      shouldCreateAfterScript: flags.after,
     };
-    await createMigration(args.name);
+    await createMigration(args.name, config);
   }
 }

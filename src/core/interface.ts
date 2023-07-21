@@ -14,8 +14,12 @@ export type DB_TYPE = (typeof DB_TYPE)[keyof typeof DB_TYPE];
 
 export type IMigrationConfig = {
   migrationDir: string;
+  shouldCreateBeforeScript: boolean;
+  shouldCreateAfterScript: boolean;
 };
 
 export const DEFAULT_CONFIG: IMigrationConfig = {
   migrationDir: 'migrations',
+  shouldCreateBeforeScript: true,
+  shouldCreateAfterScript: true,
 };
