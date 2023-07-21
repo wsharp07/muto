@@ -1,4 +1,4 @@
-name: tests
+name: ci
 on:
   push:
     branches-ignore: [main]
@@ -16,7 +16,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Setup Node ${{ matrix.node_version }}}
+      - name: Setup Node ${{ matrix.node_version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node_version }}
