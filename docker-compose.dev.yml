@@ -16,7 +16,7 @@ services:
     image: mysql:latest
     container_name: mysql
     restart: always
-    environment: 
+    environment:
       MYSQL_ROOT_PASSWORD: mysql
       MYSQL_DATABASE: test-db
     ports:
