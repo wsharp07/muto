@@ -6,6 +6,7 @@ import { type IDatabaseAdapter } from '../interface';
 
 export class PostgresDatabaseAdapter implements IDatabaseAdapter {
   private readonly db: ConnectionPool;
+
   constructor(private readonly connectionString: string) {
     this.db = createPostgresConnectionPool({
       bigIntMode: 'bigint',

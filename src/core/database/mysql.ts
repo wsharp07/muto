@@ -6,6 +6,7 @@ import { type IDatabaseAdapter } from '../interface';
 
 export class MySqlDatabaseAdapter implements IDatabaseAdapter {
   private readonly db: ConnectionPool;
+
   constructor(private readonly connectionString: string) {
     this.db = createMysqlConnectionPool({
       bigIntMode: 'bigint',

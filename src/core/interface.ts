@@ -5,12 +5,12 @@ export type IDatabaseAdapter = {
   dispose(): void;
 };
 
-export const DB_TYPE = {
+export const DATABASE_TYPE = {
   POSTGRES: 'POSTGRES',
   MYSQL: 'MYSQL',
 } as const;
-// eslint-disable-next-line @typescript-eslint/no-redeclare
-export type DB_TYPE = (typeof DB_TYPE)[keyof typeof DB_TYPE];
+// eslint-disable-next-line @typescript-eslint/no-redeclare, @typescript-eslint/naming-convention
+export type DATABASE_TYPE = (typeof DATABASE_TYPE)[keyof typeof DATABASE_TYPE];
 
 export type IMigrationConfig = {
   migrationDir: string;
