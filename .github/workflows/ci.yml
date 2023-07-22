@@ -8,7 +8,7 @@ jobs:
   build-test-lint:
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, windows-latest]
         node_version: [lts/*]
       fail-fast: false
     runs-on: ${{ matrix.os }}
