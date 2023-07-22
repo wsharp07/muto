@@ -19,7 +19,7 @@
     "@databases/pg": "^5.4.1",
     "@oclif/core": "^2.9.4",
     "@oclif/plugin-help": "^5.2.14",
-    "@oclif/plugin-plugins": "^3.1.7"
+    "@oclif/plugin-plugins": "^3.1.8"
   },
   "devDependencies": {
     "@oclif/test": "^2.3.31",
