@@ -7409,7 +7409,7 @@ __metadata:
     jest: ^29.6.1
     lint-staged: ^13.2.3
     memfs: ^4.2.0
-    oclif: ^3.9.1
+    oclif: ^3.10.0
     pinst: ^3.0.0
     prettier: 3.0.0
     shx: ^0.3.4
@@ -8036,9 +8036,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"oclif@npm:^3.9.1":
-  version: 3.9.2
-  resolution: "oclif@npm:3.9.2"
+"oclif@npm:^3.10.0":
+  version: 3.10.0
+  resolution: "oclif@npm:3.10.0"
   dependencies:
     "@oclif/core": ^2.9.4
     "@oclif/plugin-help": ^5.2.14
@@ -8062,7 +8062,7 @@ __metadata:
   bin:
     oclif: bin/run
     oclif2: bin/run
-  checksum: 403f371eaf7f7312759ec6d6be2db200b43e7fdbde228154bccdf57967454752900b6eebbbf2d250e0200990b95b8233f8e6022f10369ece61ff8393c5f46b1d
+  checksum: 21fa741fe9216642e23b18070648daed227ae5228f1ed93ac86b0b012e4ea7caa12c2065fae1955f6b8b20016f8870123939a23b28a50b6757875517598a1b82
   languageName: node
   linkType: hard
 
