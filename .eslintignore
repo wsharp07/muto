@@ -1,1 +1,5 @@
 /dist
+node_modules
+.eslintrc.cjs
+__mocks__
+jest.config.ts
