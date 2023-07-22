@@ -35,6 +35,7 @@
     "shx": "^0.3.4",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.7",
     "tslib": "^2.6.0",
     "typescript": "^5.1.6",
     "xo": "^0.55.0"
@@ -56,11 +57,12 @@
   },
   "scripts": {
     "dev": "./bin/dev",
-    "build": "shx rm -rf dist && tsc -b",
+    "build": "shx rm -rf dist && tsc -b && tsc-alias -p tsconfig.json",
     "lint": "xo",
     "postpack": "shx rm -f oclif.manifest.json && pinst --enable",
     "posttest": "npm run lint",
-    "prepack": "npm run build && oclif manifest && oclif readme && pinst --disable",
+    "oclif-paths": "ts-node --project tsconfig.json -r tsconfig-paths/register node_modules/.bin/oclif",
+    "prepack": "npm run build && npm run oclif-paths manifest && npm run oclif-paths readme",
     "test": "jest",
     "version": "oclif readme && git add README.md",
     "postinstall": "husky install"
