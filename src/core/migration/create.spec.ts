@@ -1,8 +1,8 @@
-import { readdir } from 'node:fs/promises';
+import { readdir } from 'fs/promises';
 import { vol } from 'memfs';
 import { createMigration } from './create';
 
-jest.mock('node:fs/promises');
+jest.mock('fs/promises');
 
 describe('migrate', () => {
   beforeEach(() => {

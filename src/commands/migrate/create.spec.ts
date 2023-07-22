@@ -1,6 +1,6 @@
 import MigrateCreate from './create';
 
-jest.mock('node:fs/promises');
+jest.mock('fs/promises');
 
 describe('migrate:create', () => {
   let stdout: string[];
