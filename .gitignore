@@ -9,6 +9,7 @@
 node_modules
 oclif.manifest.json
 migrations
+.eslintcache
 
 # Yarn
 .pnp.*
