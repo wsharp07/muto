@@ -1,4 +1,4 @@
-import { writeFile, mkdir } from 'node:fs/promises';
+import { writeFile, mkdir } from 'fs/promises';
 import { DEFAULT_CONFIG } from '@core/interface';
 
 const createDirectory = async (dir: string): Promise<void> => {
