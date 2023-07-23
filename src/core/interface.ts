@@ -20,6 +20,6 @@ export type IMigrationConfig = {
 
 export const DEFAULT_CONFIG: IMigrationConfig = {
   migrationDir: 'migrations',
-  shouldCreateBeforeScript: true,
-  shouldCreateAfterScript: true,
+  shouldCreateBeforeScript: false,
+  shouldCreateAfterScript: false,
 };

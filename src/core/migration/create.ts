@@ -25,14 +25,19 @@ export const createMigration = async (
     'down.sql',
     '## Write your down migration here\n'
   );
-  await createFile(
-    directory,
-    'before.sql',
-    '## Write your before migration here\n'
-  );
-  await createFile(
-    directory,
-    'after.sql',
-    '## Write your after migration here\n'
-  );
+  if (config.shouldCreateBeforeScript) {
+    await createFile(
+      directory,
+      'before.sql',
+      '## Write your before migration here\n'
+    );
+  }
+
+  if (config.shouldCreateAfterScript) {
+    await createFile(
+      directory,
+      'after.sql',
+      '## Write your after migration here\n'
+    );
+  }
 };
