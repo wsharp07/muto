@@ -1,6 +1,6 @@
-import { Args, Command, Flags } from '@oclif/core';
-import { createMigration } from '../../core/migrate';
 import { DEFAULT_CONFIG } from '@core/interface';
+import { createMigration } from '@core/migration';
+import { Args, Command, Flags } from '@oclif/core';
 
 export default class MigrateCreate extends Command {
   static description = 'Creates a new migration';
