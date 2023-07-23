@@ -1,8 +1,18 @@
 export type IDatabaseAdapter = {
   query(query: string): Promise<void>;
   createMigrationTable(): Promise<void>;
-  getLatestMigration(): Promise<void>;
+  getLatestMigration(): Promise<string>;
+  executeMigrationUp(migration: IMigration): Promise<void>;
+  executeMigrationDown(migration: IMigration): Promise<void>;
   dispose(): void;
+};
+
+export type IMigration = {
+  name: string;
+  up: string;
+  down: string;
+  before?: string;
+  after?: string;
 };
 
 export const DATABASE_TYPE = {

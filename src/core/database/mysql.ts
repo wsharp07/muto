@@ -2,7 +2,7 @@ import createMysqlConnectionPool, {
   type ConnectionPool,
   sql,
 } from '@databases/mysql';
-import { type IDatabaseAdapter } from '../interface';
+import { IMigration, type IDatabaseAdapter } from '../interface';
 
 export class MySqlDatabaseAdapter implements IDatabaseAdapter {
   private readonly db: ConnectionPool;
@@ -11,6 +11,30 @@ export class MySqlDatabaseAdapter implements IDatabaseAdapter {
     this.db = createMysqlConnectionPool({
       bigIntMode: 'bigint',
       connectionString: this.connectionString,
+    });
+  }
+
+  async executeMigrationUp(migration: IMigration): Promise<void> {
+    await this.db.tx(async (transaction) => {
+      if (migration.before) {
+        await transaction.query(sql`${migration.before}`);
+      }
+
+      await transaction.query(sql`${migration.up}`);
+
+      await transaction.query(
+        sql`INSERT INTO migrations (name) VALUES (${migration.name})`
+      );
+
+      if (migration.after) {
+        await transaction.query(sql`${migration.after}`);
+      }
+    });
+  }
+
+  async executeMigrationDown(migration: IMigration): Promise<void> {
+    await this.db.tx(async (transaction) => {
+      await transaction.query(sql`${migration.down}`);
     });
   }
 
@@ -28,10 +52,12 @@ export class MySqlDatabaseAdapter implements IDatabaseAdapter {
     `);
   }
 
-  async getLatestMigration(): Promise<void> {
-    await this.db.query(sql`
+  async getLatestMigration(): Promise<string> {
+    const result = await this.db.query(sql`
       SELECT name FROM migrations ORDER BY id DESC LIMIT 1;
     `);
+
+    return result[0]?.name ?? undefined;
   }
 
   async query(query: string): Promise<void> {
