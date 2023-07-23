@@ -17,8 +17,8 @@ export const loadMigration = async (
 
   return {
     name,
-    up,
-    down,
+    upSql: up,
+    downSql: down,
   };
 };
 

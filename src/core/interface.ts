@@ -9,10 +9,10 @@ export type IDatabaseAdapter = {
 
 export type IMigration = {
   name: string;
-  up: string;
-  down: string;
-  before?: string;
-  after?: string;
+  upSql: string;
+  downSql: string;
+  beforeSql?: string;
+  afterSql?: string;
 };
 
 export const DATABASE_TYPE = {
@@ -24,8 +24,8 @@ export type DATABASE_TYPE = (typeof DATABASE_TYPE)[keyof typeof DATABASE_TYPE];
 
 export type IMigrationConfig = {
   migrationDir: string;
-  shouldCreateBeforeScript: boolean;
-  shouldCreateAfterScript: boolean;
+  shouldCreateBeforeScript?: boolean;
+  shouldCreateAfterScript?: boolean;
 };
 
 export const DEFAULT_CONFIG: IMigrationConfig = {

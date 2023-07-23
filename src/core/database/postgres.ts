@@ -38,25 +38,25 @@ export class PostgresDatabaseAdapter implements IDatabaseAdapter {
 
   async executeMigrationUp(migration: IMigration): Promise<void> {
     await this.db.tx(async (transaction) => {
-      if (migration.before) {
-        await transaction.query(sql`${migration.before}`);
+      if (migration.beforeSql) {
+        await transaction.query(sql`${migration.beforeSql}`);
       }
 
-      await transaction.query(sql`${migration.up}`);
+      await transaction.query(sql`${migration.upSql}`);
 
       await transaction.query(
         sql`INSERT INTO migrations (name) VALUES (${migration.name})`
       );
 
-      if (migration.after) {
-        await transaction.query(sql`${migration.after}`);
+      if (migration.afterSql) {
+        await transaction.query(sql`${migration.afterSql}`);
       }
     });
   }
 
   async executeMigrationDown(migration: IMigration): Promise<void> {
     await this.db.tx(async (transaction) => {
-      await transaction.query(sql`${migration.down}`);
+      await transaction.query(sql`${migration.downSql}`);
     });
   }
 
