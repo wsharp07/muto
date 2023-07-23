@@ -2,7 +2,7 @@ import createPostgresConnectionPool, {
   type ConnectionPool,
   sql,
 } from '@databases/pg';
-import { type IDatabaseAdapter } from '../interface';
+import { IMigration, type IDatabaseAdapter } from '../interface';
 
 export class PostgresDatabaseAdapter implements IDatabaseAdapter {
   private readonly db: ConnectionPool;
@@ -28,10 +28,36 @@ export class PostgresDatabaseAdapter implements IDatabaseAdapter {
     `);
   }
 
-  async getLatestMigration(): Promise<void> {
-    await this.db.query(sql`
+  async getLatestMigration(): Promise<string> {
+    const result = await this.db.query(sql`
       SELECT name FROM migrations ORDER BY id DESC LIMIT 1;
     `);
+
+    return result[0]?.name ?? undefined;
+  }
+
+  async executeMigrationUp(migration: IMigration): Promise<void> {
+    await this.db.tx(async (transaction) => {
+      if (migration.beforeSql) {
+        await transaction.query(sql`${migration.beforeSql}`);
+      }
+
+      await transaction.query(sql`${migration.upSql}`);
+
+      await transaction.query(
+        sql`INSERT INTO migrations (name) VALUES (${migration.name})`
+      );
+
+      if (migration.afterSql) {
+        await transaction.query(sql`${migration.afterSql}`);
+      }
+    });
+  }
+
+  async executeMigrationDown(migration: IMigration): Promise<void> {
+    await this.db.tx(async (transaction) => {
+      await transaction.query(sql`${migration.downSql}`);
+    });
   }
 
   async query(query: string): Promise<void> {
