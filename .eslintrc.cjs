@@ -10,12 +10,19 @@ module.exports = {
     'airbnb-base',
     'airbnb-typescript/base',
     'plugin:unicorn/recommended',
-    'prettier'
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'unicorn'],
   rules: {
     'unicorn/prefer-node-protocol': 'off',
     'import/prefer-default-export': 'off',
+    'no-restricted-syntax': [
+      'error',
+      'ForInStatement',
+      'LabeledStatement',
+      'WithStatement',
+    ],
+    'no-await-in-loop': 'off'
   },
 };

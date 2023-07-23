@@ -22,14 +22,11 @@ export const runMigrations = async (
       latestMigration
     );
 
-    // eslint-disable-next-line no-restricted-syntax
     for (const migration of migrationsToRun) {
-      // eslint-disable-next-line no-await-in-loop
       const migrationToRun = await loadMigration(
         config.migrationDir,
         migration
       );
-      // eslint-disable-next-line no-await-in-loop
       await database.executeMigrationUp(migrationToRun);
     }
   } finally {
