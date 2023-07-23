@@ -1,5 +1,6 @@
 import { writeFile, mkdir } from 'fs/promises';
 import { DEFAULT_CONFIG } from '@core/interface';
+import { AFTER_FILE, BEFORE_FILE, DOWN_FILE, UP_FILE } from '@core/constants';
 
 const createDirectory = async (directory: string): Promise<void> => {
   await mkdir(directory, { recursive: true });
@@ -19,20 +20,21 @@ export const createMigration = async (
 ): Promise<void> => {
   const directory = `${config.migrationDir}/${Date.now()}-${name}`;
   await createDirectory(directory);
-  await createFile(directory, 'up.sql', '## Write your up migration here\n');
-  await createFile(
-    directory,
-    'down.sql',
-    '## Write your down migration here\n'
-  );
-  await createFile(
-    directory,
-    'before.sql',
-    '## Write your before migration here\n'
-  );
-  await createFile(
-    directory,
-    'after.sql',
-    '## Write your after migration here\n'
-  );
+  await createFile(directory, UP_FILE, '## Write your up migration here\n');
+  await createFile(directory, DOWN_FILE, '## Write your down migration here\n');
+  if (config.shouldCreateBeforeScript) {
+    await createFile(
+      directory,
+      BEFORE_FILE,
+      '## Write your before migration here\n'
+    );
+  }
+
+  if (config.shouldCreateAfterScript) {
+    await createFile(
+      directory,
+      AFTER_FILE,
+      '## Write your after migration here\n'
+    );
+  }
 };
