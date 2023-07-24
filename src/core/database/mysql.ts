@@ -41,9 +41,9 @@ export class MySqlDatabaseAdapter extends BaseDatabaseAdapter {
     await this.db.query(sql`${query}`);
   }
 
-  async queryWithTransaction(querys: string[]): Promise<void> {
+  async queryWithTransaction(queries: string[]): Promise<void> {
     this.db.tx(async (transaction) => {
-      for await (const query of querys) {
+      for await (const query of queries) {
         await transaction.query(sql`${query}`);
       }
     });
