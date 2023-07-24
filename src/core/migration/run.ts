@@ -9,10 +9,6 @@ export const runMigrations = async (
   database: IDatabaseAdapter,
   config: IMigrationConfig = DEFAULT_CONFIG
 ): Promise<void> => {
-  // const database: IDatabaseAdapter = databaseFactory(
-  //   DATABASE_TYPE.POSTGRES,
-  //   'postgres://postgres:postgres@localhost:5432/test-db'
-  // );
   try {
     await database.createMigrationTable();
     const latestMigration = await database.getLatestMigration();
@@ -30,6 +26,6 @@ export const runMigrations = async (
       await database.executeMigrationUp(migrationToRun);
     }
   } finally {
-    database.dispose();
+    await database.dispose();
   }
 };

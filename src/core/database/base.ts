@@ -1,29 +1,40 @@
 import { IDatabaseAdapter, IMigration } from '@core/interface';
+import { IDisposable } from '@core/using';
 
-export abstract class BaseDatabaseAdapter implements IDatabaseAdapter {
+export abstract class BaseDatabaseAdapter
+  implements IDatabaseAdapter, IDisposable
+{
+  private readonly migrationTableName = 'migrations';
+
   abstract query(query: string): Promise<void>;
   abstract createMigrationTable(): Promise<void>;
   abstract getLatestMigration(): Promise<string>;
-  abstract dispose(): void;
-  abstract queryWithTransaction(querys: string[]): Promise<void>;
+  abstract dispose(): Promise<void>;
+  abstract queryWithTransaction(queries: string[]): Promise<void>;
 
   async executeMigrationUp(migration: IMigration): Promise<void> {
-    const querys = [];
+    const queries: string[] = [];
     if (migration.beforeSql) {
-      querys.push(migration.beforeSql);
+      queries.push(migration.beforeSql);
     }
 
-    querys.push(`INSERT INTO migrations (name) VALUES (${migration.name})`);
+    queries.push(
+      `INSERT INTO ${this.migrationTableName} (name) VALUES (${migration.name})`
+    );
 
     if (migration.afterSql) {
-      querys.push(migration.afterSql);
+      queries.push(migration.afterSql);
     }
 
-    await this.queryWithTransaction(querys);
+    await this.queryWithTransaction(queries);
   }
 
   async executeMigrationDown(migration: IMigration): Promise<void> {
-    await this.query(`${migration.downSql}`);
-    await this.query(`DELETE FROM migrations WHERE name = ${migration.name}`);
+    const queries: string[] = [];
+    queries.push(
+      `${migration.downSql}`,
+      `DELETE FROM ${this.migrationTableName} WHERE name = ${migration.name}`
+    );
+    await this.queryWithTransaction(queries);
   }
 }
