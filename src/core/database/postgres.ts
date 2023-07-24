@@ -2,12 +2,13 @@ import createPostgresConnectionPool, {
   type ConnectionPool,
   sql,
 } from '@databases/pg';
-import { IMigration, type IDatabaseAdapter } from '../interface';
+import { BaseDatabaseAdapter } from './base';
 
-export class PostgresDatabaseAdapter implements IDatabaseAdapter {
+export class PostgresDatabaseAdapter extends BaseDatabaseAdapter {
   private readonly db: ConnectionPool;
 
   constructor(private readonly connectionString: string) {
+    super();
     this.db = createPostgresConnectionPool({
       bigIntMode: 'bigint',
       connectionString: this.connectionString,
@@ -36,31 +37,15 @@ export class PostgresDatabaseAdapter implements IDatabaseAdapter {
     return result[0]?.name ?? undefined;
   }
 
-  async executeMigrationUp(migration: IMigration): Promise<void> {
-    await this.db.tx(async (transaction) => {
-      if (migration.beforeSql) {
-        await transaction.query(sql`${migration.beforeSql}`);
-      }
-
-      await transaction.query(sql`${migration.upSql}`);
-
-      await transaction.query(
-        sql`INSERT INTO migrations (name) VALUES (${migration.name})`
-      );
-
-      if (migration.afterSql) {
-        await transaction.query(sql`${migration.afterSql}`);
-      }
-    });
-  }
-
-  async executeMigrationDown(migration: IMigration): Promise<void> {
-    await this.db.tx(async (transaction) => {
-      await transaction.query(sql`${migration.downSql}`);
-    });
-  }
-
   async query(query: string): Promise<void> {
     await this.db.query(sql`${query}`);
+  }
+
+  async queryWithTransaction(queries: string[]): Promise<void> {
+    this.db.tx(async (transaction) => {
+      for await (const query of queries) {
+        await transaction.query(sql`${query}`);
+      }
+    });
   }
 }
