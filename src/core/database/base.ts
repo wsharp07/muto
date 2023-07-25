@@ -14,13 +14,15 @@ export abstract class BaseDatabaseAdapter
 
   async executeMigrationUp(migration: IMigration): Promise<void> {
     const queries: string[] = [];
+    console.log(`Running migration - ${migration.name}`);
+
     if (migration.beforeSql) {
       queries.push(migration.beforeSql);
     }
 
     queries.push(
       migration.upSql,
-      `INSERT INTO ${this.migrationTableName} (name) VALUES (${migration.name})`
+      `INSERT INTO ${this.migrationTableName} (name) VALUES ('${migration.name}')`
     );
 
     if (migration.afterSql) {
@@ -28,6 +30,7 @@ export abstract class BaseDatabaseAdapter
     }
 
     await this.queryWithTransaction(queries);
+    console.log(`Completed migration - ${migration.name}`);
   }
 
   async executeMigrationDown(migration: IMigration): Promise<void> {

@@ -1,12 +1,25 @@
-import mysql2, { Pool, RowDataPacket } from 'mysql2/promise';
+// import mysql2, { Pool, RowDataPacket } from 'mysql2/promise';
+import * as mysql2 from 'mysql2/promise';
+import { Pool, RowDataPacket, ConnectionOptions } from 'mysql2/promise';
 import { BaseDatabaseAdapter } from './base';
 
 export class MySqlDatabaseAdapter extends BaseDatabaseAdapter {
   private readonly db: Pool;
 
+  private readonly options: ConnectionOptions;
+
   constructor(private readonly connectionString: string) {
     super();
-    this.db = mysql2.createPool(this.connectionString);
+
+    this.options = {
+      multipleStatements: true,
+    };
+
+    this.db = mysql2.createPool(
+      `${this.connectionString}?${new URLSearchParams(
+        this.options as Record<string, string>
+      ).toString()}`
+    );
   }
 
   async dispose(): Promise<void> {
@@ -28,7 +41,7 @@ export class MySqlDatabaseAdapter extends BaseDatabaseAdapter {
       SELECT name FROM migrations ORDER BY id DESC LIMIT 1;
     `);
 
-    return rows[0].name ?? undefined;
+    return rows[0]?.name ?? undefined;
   }
 
   async query(query: string): Promise<void> {
@@ -36,12 +49,16 @@ export class MySqlDatabaseAdapter extends BaseDatabaseAdapter {
   }
 
   async queryWithTransaction(queries: string[]): Promise<void> {
-    const connection = await this.db.getConnection();
-    await connection.beginTransaction();
-    for await (const query of queries) {
-      await connection.query(query);
+    try {
+      const connection = await this.db.getConnection();
+      await connection.beginTransaction();
+      for await (const query of queries) {
+        await connection.query(query);
+      }
+      await connection.commit();
+      connection.release();
+    } catch (error) {
+      console.error(error);
     }
-    await connection.commit();
-    connection.release();
   }
 }

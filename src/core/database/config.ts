@@ -1,4 +1,8 @@
-import { DATABASE_TYPE, IDatabaseConfig, isDatabaseType } from '../interface';
+import {
+  DATABASE_TYPE,
+  IDatabaseConfig,
+  isSupportedDatabaseType,
+} from '../interface';
 import 'dotenv/config';
 
 export const databaseConfigFromEnvironment = (): IDatabaseConfig => {
@@ -17,7 +21,7 @@ export const databaseConfigFromEnvironment = (): IDatabaseConfig => {
     );
   }
 
-  if (!isDatabaseType(databaseType)) {
+  if (!isSupportedDatabaseType(databaseType)) {
     throw new TypeError(
       `ENV VAR MUTO_DB_CONNECTION_STRING Invalid. Unsupported database type ${databaseType}`
     );

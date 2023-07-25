@@ -18,6 +18,5 @@ export default class MigrateUp extends Command {
     const database = databaseFactory(databaseConfigFromEnvironment());
 
     await runMigrations(database);
-    console.log('Migrate Up Completed');
   }
 }
