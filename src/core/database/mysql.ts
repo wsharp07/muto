@@ -1,6 +1,9 @@
-// import mysql2, { Pool, RowDataPacket } from 'mysql2/promise';
-import * as mysql2 from 'mysql2/promise';
-import { Pool, RowDataPacket, ConnectionOptions } from 'mysql2/promise';
+import {
+  Pool,
+  RowDataPacket,
+  ConnectionOptions,
+  createPool,
+} from 'mysql2/promise';
 import { BaseDatabaseAdapter } from './base';
 
 export class MySqlDatabaseAdapter extends BaseDatabaseAdapter {
@@ -15,7 +18,7 @@ export class MySqlDatabaseAdapter extends BaseDatabaseAdapter {
       multipleStatements: true,
     };
 
-    this.db = mysql2.createPool(
+    this.db = createPool(
       `${this.connectionString}?${new URLSearchParams(
         this.options as Record<string, string>
       ).toString()}`
