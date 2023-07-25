@@ -1,11 +1,15 @@
-import { DATABASE_TYPE, type IDatabaseAdapter } from '../interface';
+import {
+  DATABASE_TYPE,
+  IDatabaseConfig,
+  type IDatabaseAdapter,
+} from '../interface';
 import { MySqlDatabaseAdapter } from './mysql';
 import { PostgresDatabaseAdapter } from './postgres';
 
-export const databaseFactory = (
-  databaseType: DATABASE_TYPE,
-  connectionString: string
-): IDatabaseAdapter => {
+export const databaseFactory = ({
+  databaseType,
+  connectionString,
+}: IDatabaseConfig): IDatabaseAdapter => {
   switch (databaseType) {
     case DATABASE_TYPE.POSTGRES: {
       return new PostgresDatabaseAdapter(connectionString);

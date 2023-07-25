@@ -469,32 +469,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@databases/mysql-config@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "@databases/mysql-config@npm:3.2.0"
-  dependencies:
-    cosmiconfig: ^8.1.0
-    funtypes: ^4.1.0
-  checksum: ae038829b7605221afdf40b336a8ad44245924116b7f64a021022eabd7b7f987710d5fe0010922adbc78917ce233a54aef05bfce7b060ef3b69a72dd80c2f6f2
-  languageName: node
-  linkType: hard
-
-"@databases/mysql@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "@databases/mysql@npm:6.0.0"
-  dependencies:
-    "@babel/code-frame": ^7.0.0
-    "@databases/escape-identifier": ^1.0.3
-    "@databases/mysql-config": ^3.2.0
-    "@databases/push-to-async-iterable": ^3.0.0
-    "@databases/shared": ^3.0.2
-    "@databases/sql": ^3.3.0
-    "@types/mysql": ^2.15.5
-    mysql2: ^2.2.5
-  checksum: e56162d1789d9d7dda06eb8e0f08d01f8bbb64e46733d34bbfe6cbf6f020ea0bbc37ac768d69fddc3229dd202051d80350eec74d6c75e447ce33260841333552
-  languageName: node
-  linkType: hard
-
 "@databases/pg-config@npm:^3.1.0":
   version: 3.2.0
   resolution: "@databases/pg-config@npm:3.2.0"
@@ -565,7 +539,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@databases/shared@npm:^3.0.0, @databases/shared@npm:^3.0.2":
+"@databases/shared@npm:^3.0.0":
   version: 3.0.2
   resolution: "@databases/shared@npm:3.0.2"
   dependencies:
@@ -1981,15 +1955,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/mysql@npm:^2.15.5":
-  version: 2.15.21
-  resolution: "@types/mysql@npm:2.15.21"
-  dependencies:
-    "@types/node": "*"
-  checksum: 6f526e0183c2d03628ca3bdeec839900403863641d61397de3aa0431b8e92457f1580de16b54ee3cd81ccb3968f949a5fa9be939a2101f2148ed5ff3c775c0a7
-  languageName: node
-  linkType: hard
-
 "@types/node@npm:*":
   version: 20.4.2
   resolution: "@types/node@npm:20.4.2"
@@ -2716,7 +2681,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"big-integer@npm:^1.6.44":
+"big-integer@npm:^1.6.44, big-integer@npm:^1.6.48":
   version: 1.6.51
   resolution: "big-integer@npm:1.6.51"
   checksum: 3d444173d1b2e20747e2c175568bedeebd8315b0637ea95d75fd27830d3b8e8ba36c6af40374f36bdaea7b5de376dcada1b07587cb2a79a928fccdb6e6e3c518
@@ -3466,6 +3431,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"commander@npm:^2.19.0":
+  version: 2.20.3
+  resolution: "commander@npm:2.20.3"
+  checksum: ab8c07884e42c3a8dbc5dd9592c606176c7eb5c1ca5ff274bcf907039b2c41de3626f684ea75ccf4d361ba004bbaff1f577d5384c155f3871e456bdf27becf9e
+  languageName: node
+  linkType: hard
+
 "commander@npm:^9.0.0":
   version: 9.5.0
   resolution: "commander@npm:9.5.0"
@@ -3765,7 +3737,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"denque@npm:^2.0.1":
+"denque@npm:^2.1.0":
   version: 2.1.0
   resolution: "denque@npm:2.1.0"
   checksum: 1d4ae1d05e59ac3a3481e7b478293f4b4c813819342273f3d5b826c7ffa9753c520919ba264f377e09108d24ec6cf0ec0ac729a5686cbb8f32d797126c5dae74
@@ -3833,6 +3805,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"discontinuous-range@npm:1.0.0":
+  version: 1.0.0
+  resolution: "discontinuous-range@npm:1.0.0"
+  checksum: 8ee88d7082445b6eadc7c03bebe6dc978f96760c45e9f65d16ca66174d9e086a9e3855ee16acf65625e1a07a846a17de674f02a5964a6aebe5963662baf8b5c8
+  languageName: node
+  linkType: hard
+
 "doctrine@npm:^2.1.0":
   version: 2.1.0
   resolution: "doctrine@npm:2.1.0"
@@ -3848,6 +3827,13 @@ __metadata:
   dependencies:
     esutils: ^2.0.2
   checksum: fd7673ca77fe26cd5cba38d816bc72d641f500f1f9b25b83e8ce28827fe2da7ad583a8da26ab6af85f834138cf8dae9f69b0cd6ab925f52ddab1754db44d99ce
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^16.3.1":
+  version: 16.3.1
+  resolution: "dotenv@npm:16.3.1"
+  checksum: 15d75e7279018f4bafd0ee9706593dd14455ddb71b3bcba9c52574460b7ccaf67d5cf8b2c08a5af1a9da6db36c956a04a1192b101ee102a3e0cf8817bbcf3dfd
   languageName: node
   linkType: hard
 
@@ -4816,6 +4802,13 @@ __metadata:
   version: 0.1.0
   resolution: "get-package-type@npm:0.1.0"
   checksum: bba0811116d11e56d702682ddef7c73ba3481f114590e705fc549f4d868972263896af313c57a25c076e3c0d567e11d919a64ba1b30c879be985fc9d44f96148
+  languageName: node
+  linkType: hard
+
+"get-stdin@npm:=8.0.0":
+  version: 8.0.0
+  resolution: "get-stdin@npm:8.0.0"
+  checksum: 40128b6cd25781ddbd233344f1a1e4006d4284906191ed0a7d55ec2c1a3e44d650f280b2c9eeab79c03ac3037da80257476c0e4e5af38ddfb902d6ff06282d77
   languageName: node
   linkType: hard
 
@@ -6902,10 +6895,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"long@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "long@npm:4.0.0"
-  checksum: 16afbe8f749c7c849db1f4de4e2e6a31ac6e617cead3bdc4f9605cb703cd20e1e9fc1a7baba674ffcca57d660a6e5b53a9e236d7b25a295d3855cca79cc06744
+"long@npm:^5.2.1":
+  version: 5.2.3
+  resolution: "long@npm:5.2.3"
+  checksum: 885ede7c3de4facccbd2cacc6168bae3a02c3e836159ea4252c87b6e34d40af819824b2d4edce330bfb5c4d6e8ce3ec5864bdcf9473fa1f53a4f8225860e5897
   languageName: node
   linkType: hard
 
@@ -6938,6 +6931,13 @@ __metadata:
   version: 7.18.3
   resolution: "lru-cache@npm:7.18.3"
   checksum: e550d772384709deea3f141af34b6d4fa392e2e418c1498c078de0ee63670f1f46f5eee746e8ef7e69e1c895af0d4224e62ee33e66a543a14763b0f2e74c1356
+  languageName: node
+  linkType: hard
+
+"lru-cache@npm:^8.0.0":
+  version: 8.0.5
+  resolution: "lru-cache@npm:8.0.5"
+  checksum: 87d72196d8f46e8299c4ab576ed2ec8a07e3cbef517dc9874399c0b2470bd9bf62aacec3b67f84ed6d74aaa1ef31636d048edf996f76248fd17db72bfb631609
   languageName: node
   linkType: hard
 
@@ -7344,6 +7344,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"moo@npm:^0.5.0":
+  version: 0.5.2
+  resolution: "moo@npm:0.5.2"
+  checksum: 5a41ddf1059fd0feb674d917c4774e41c877f1ca980253be4d3aae1a37f4bc513f88815041243f36f5cf67a62fb39324f3f997cf7fb17b6cb00767c165e7c499
+  languageName: node
+  linkType: hard
+
 "ms@npm:2.1.2":
   version: 2.1.2
   resolution: "ms@npm:2.1.2"
@@ -7389,7 +7396,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "muto@workspace:."
   dependencies:
-    "@databases/mysql": ^6.0.0
     "@databases/pg": ^5.4.1
     "@oclif/core": ^2.9.4
     "@oclif/plugin-help": ^5.2.14
@@ -7399,6 +7405,7 @@ __metadata:
     "@types/node": ^20.4.4
     "@typescript-eslint/eslint-plugin": ^6.1.0
     "@typescript-eslint/parser": ^6.1.0
+    dotenv: ^16.3.1
     eslint: ^8.45.0
     eslint-config-airbnb-typescript: ^17.1.0
     eslint-config-prettier: ^8.8.0
@@ -7409,9 +7416,11 @@ __metadata:
     jest: ^29.6.1
     lint-staged: ^13.2.3
     memfs: ^4.2.0
+    mysql2: ^3.5.2
     oclif: ^3.10.0
     pinst: ^3.0.0
-    prettier: 3.0.0
+    prettier: ^3.0.0
+    prettier-plugin-sql: ^0.15.1
     shx: ^0.3.4
     ts-jest: ^29.1.1
     ts-node: ^10.9.1
@@ -7430,23 +7439,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mysql2@npm:^2.2.5":
-  version: 2.3.3
-  resolution: "mysql2@npm:2.3.3"
+"mysql2@npm:^3.5.2":
+  version: 3.5.2
+  resolution: "mysql2@npm:3.5.2"
   dependencies:
-    denque: ^2.0.1
+    denque: ^2.1.0
     generate-function: ^2.3.1
     iconv-lite: ^0.6.3
-    long: ^4.0.0
-    lru-cache: ^6.0.0
-    named-placeholders: ^1.1.2
+    long: ^5.2.1
+    lru-cache: ^8.0.0
+    named-placeholders: ^1.1.3
     seq-queue: ^0.0.5
     sqlstring: ^2.3.2
-  checksum: 45e479d0cbdb24ceb9d1846a1708ae2c33aa64f603f7899279b33560b1eec441f1b7a596075896f1305f701cfbc083bceb88bc72ba5d2f3656a3d6102611286a
+  checksum: 3530a005be5ff9c6d9e766009c16f0c5c6e2a8b188a6017f209d1a2e0a1c6f6679045556a8a39a19b5a5f56cd40be95584ce9414ec683ca4859d2f5ae86b7e2b
   languageName: node
   linkType: hard
 
-"named-placeholders@npm:^1.1.2":
+"named-placeholders@npm:^1.1.3":
   version: 1.1.3
   resolution: "named-placeholders@npm:1.1.3"
   dependencies:
@@ -7473,6 +7482,23 @@ __metadata:
   version: 2.0.3
   resolution: "natural-orderby@npm:2.0.3"
   checksum: 039be7f0b6cf81e63d2ae5299553f8e6c8f6ae4f571c7c002eab9c6d36a2e33101704e0ec64c3cecef956fa3b1a68bb0ddfc03208e89f31c0b0bb806f3198646
+  languageName: node
+  linkType: hard
+
+"nearley@npm:^2.20.1":
+  version: 2.20.1
+  resolution: "nearley@npm:2.20.1"
+  dependencies:
+    commander: ^2.19.0
+    moo: ^0.5.0
+    railroad-diagrams: ^1.0.0
+    randexp: 0.4.6
+  bin:
+    nearley-railroad: bin/nearley-railroad.js
+    nearley-test: bin/nearley-test.js
+    nearley-unparse: bin/nearley-unparse.js
+    nearleyc: bin/nearleyc.js
+  checksum: 42c2c330c13c7991b48221c5df00f4352c2f8851636ae4d1f8ca3c8e193fc1b7668c78011d1cad88cca4c1c4dc087425420629c19cc286d7598ec15533aaef26
   languageName: node
   linkType: hard
 
@@ -7568,6 +7594,15 @@ __metadata:
   version: 2.0.13
   resolution: "node-releases@npm:2.0.13"
   checksum: 17ec8f315dba62710cae71a8dad3cd0288ba943d2ece43504b3b1aa8625bf138637798ab470b1d9035b0545996f63000a8a926e0f6d35d0996424f8b6d36dda3
+  languageName: node
+  linkType: hard
+
+"node-sql-parser@npm:^4.7.0":
+  version: 4.8.0
+  resolution: "node-sql-parser@npm:4.8.0"
+  dependencies:
+    big-integer: ^1.6.48
+  checksum: 6a045f12353a2049be62d57407594a1c6c4a3b562e6e63f91723cc6f908fac63667f778fa36bfceb856341ab9d97aaf723ecb2483bd6edadbe8fa013f4d42fc4
   languageName: node
   linkType: hard
 
@@ -8660,7 +8695,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:3.0.0":
+"prettier-plugin-sql@npm:^0.15.1":
+  version: 0.15.1
+  resolution: "prettier-plugin-sql@npm:0.15.1"
+  dependencies:
+    node-sql-parser: ^4.7.0
+    sql-formatter: ^12.2.3
+    tslib: ^2.6.0
+  peerDependencies:
+    prettier: ^3.0.0
+  checksum: bb10952608bf83768d097a4dd76ac0dd0304b23f24f10e01daefa280e10efc89105b8f20a85b9b9a8a811b6045734d13c0ca35c24644fb5b948cd8bd0110db8e
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^3.0.0":
   version: 3.0.0
   resolution: "prettier@npm:3.0.0"
   bin:
@@ -8837,6 +8885,23 @@ __metadata:
   version: 5.1.1
   resolution: "quick-lru@npm:5.1.1"
   checksum: a516faa25574be7947969883e6068dbe4aa19e8ef8e8e0fd96cddd6d36485e9106d85c0041a27153286b0770b381328f4072aa40d3b18a19f5f7d2b78b94b5ed
+  languageName: node
+  linkType: hard
+
+"railroad-diagrams@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "railroad-diagrams@npm:1.0.0"
+  checksum: 9e312af352b5ed89c2118edc0c06cef2cc039681817f65266719606e4e91ff6ae5374c707cc9033fe29a82c2703edf3c63471664f97f0167c85daf6f93496319
+  languageName: node
+  linkType: hard
+
+"randexp@npm:0.4.6":
+  version: 0.4.6
+  resolution: "randexp@npm:0.4.6"
+  dependencies:
+    discontinuous-range: 1.0.0
+    ret: ~0.1.10
+  checksum: 3c0d440a3f89d6d36844aa4dd57b5cdb0cab938a41956a16da743d3a3578ab32538fc41c16cc0984b6938f2ae4cbc0216967e9829e52191f70e32690d8e3445d
   languageName: node
   linkType: hard
 
@@ -9148,6 +9213,13 @@ __metadata:
     onetime: ^5.1.0
     signal-exit: ^3.0.2
   checksum: f877dd8741796b909f2a82454ec111afb84eb45890eb49ac947d87991379406b3b83ff9673a46012fca0d7844bb989f45cc5b788254cf1a39b6b5a9659de0630
+  languageName: node
+  linkType: hard
+
+"ret@npm:~0.1.10":
+  version: 0.1.15
+  resolution: "ret@npm:0.1.15"
+  checksum: d76a9159eb8c946586567bd934358dfc08a36367b3257f7a3d7255fdd7b56597235af23c6afa0d7f0254159e8051f93c918809962ebd6df24ca2a83dbe4d4151
   languageName: node
   linkType: hard
 
@@ -9598,6 +9670,19 @@ __metadata:
   version: 1.0.3
   resolution: "sprintf-js@npm:1.0.3"
   checksum: 19d79aec211f09b99ec3099b5b2ae2f6e9cdefe50bc91ac4c69144b6d3928a640bb6ae5b3def70c2e85a2c3d9f5ec2719921e3a59d3ca3ef4b2fd1a4656a0df3
+  languageName: node
+  linkType: hard
+
+"sql-formatter@npm:^12.2.3":
+  version: 12.2.4
+  resolution: "sql-formatter@npm:12.2.4"
+  dependencies:
+    argparse: ^2.0.1
+    get-stdin: =8.0.0
+    nearley: ^2.20.1
+  bin:
+    sql-formatter: bin/sql-formatter-cli.cjs
+  checksum: b95c36f19aacddc20cfa82ca0f098e8f6c3a0cee99a85e395a9768de3547fbd7e79013a3d32c62bbf47d949f21511e4ef1df19fee769bffba306a3a66b75b2ef
   languageName: node
   linkType: hard
 

@@ -1,26 +1,20 @@
-import createMysqlConnectionPool, {
-  ConnectionPool,
-  sql,
-} from '@databases/mysql';
+import mysql2, { Pool, RowDataPacket } from 'mysql2/promise';
 import { BaseDatabaseAdapter } from './base';
 
 export class MySqlDatabaseAdapter extends BaseDatabaseAdapter {
-  private readonly db: ConnectionPool;
+  private readonly db: Pool;
 
   constructor(private readonly connectionString: string) {
     super();
-    this.db = createMysqlConnectionPool({
-      bigIntMode: 'bigint',
-      connectionString: this.connectionString,
-    });
+    this.db = mysql2.createPool(this.connectionString);
   }
 
   async dispose(): Promise<void> {
-    await this.db.dispose();
+    await this.db.end();
   }
 
   async createMigrationTable(): Promise<void> {
-    await this.db.query(sql`
+    await this.db.query(`
       CREATE TABLE IF NOT EXISTS migrations (
         id INTEGER PRIMARY KEY AUTO_INCREMENT,
         name TEXT NOT NULL,
@@ -30,22 +24,24 @@ export class MySqlDatabaseAdapter extends BaseDatabaseAdapter {
   }
 
   async getLatestMigration(): Promise<string> {
-    const result = await this.db.query(sql`
+    const [rows] = await this.db.query<RowDataPacket[]>(`
       SELECT name FROM migrations ORDER BY id DESC LIMIT 1;
     `);
 
-    return result[0]?.name ?? undefined;
+    return rows[0].name ?? undefined;
   }
 
   async query(query: string): Promise<void> {
-    await this.db.query(sql`${query}`);
+    await this.db.query(query);
   }
 
   async queryWithTransaction(queries: string[]): Promise<void> {
-    this.db.tx(async (transaction) => {
-      for await (const query of queries) {
-        await transaction.query(sql`${query}`);
-      }
-    });
+    const connection = await this.db.getConnection();
+    await connection.beginTransaction();
+    for await (const query of queries) {
+      await connection.query(query);
+    }
+    await connection.commit();
+    connection.release();
   }
 }

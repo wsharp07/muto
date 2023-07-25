@@ -19,6 +19,7 @@ export abstract class BaseDatabaseAdapter
     }
 
     queries.push(
+      migration.upSql,
       `INSERT INTO ${this.migrationTableName} (name) VALUES (${migration.name})`
     );
 
@@ -32,7 +33,7 @@ export abstract class BaseDatabaseAdapter
   async executeMigrationDown(migration: IMigration): Promise<void> {
     const queries: string[] = [];
     queries.push(
-      `${migration.downSql}`,
+      migration.downSql,
       `DELETE FROM ${this.migrationTableName} WHERE name = ${migration.name}`
     );
     await this.queryWithTransaction(queries);
