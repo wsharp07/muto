@@ -18,12 +18,17 @@ export const runMigrations = async (
       latestMigration
     );
 
+    if (migrationsToRun.length === 0) {
+      console.log('No pending migrations found');
+    }
+
     for (const migration of migrationsToRun) {
       const migrationToRun = await loadMigration(
         config.migrationDir,
         migration
       );
       await database.executeMigrationUp(migrationToRun);
+      console.log('All pending migrations completed');
     }
   } finally {
     await database.dispose();

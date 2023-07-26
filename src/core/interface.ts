@@ -23,6 +23,14 @@ export const DATABASE_TYPE = {
 // eslint-disable-next-line @typescript-eslint/no-redeclare, @typescript-eslint/naming-convention
 export type DATABASE_TYPE = (typeof DATABASE_TYPE)[keyof typeof DATABASE_TYPE];
 
+export const isSupportedDatabaseType = (database: string): boolean =>
+  Object.values(DATABASE_TYPE).includes(database as DATABASE_TYPE);
+
+export interface IDatabaseConfig {
+  databaseType: DATABASE_TYPE;
+  connectionString: string;
+}
+
 export interface IMigrationConfig {
   migrationDir: string;
   shouldCreateBeforeScript?: boolean;

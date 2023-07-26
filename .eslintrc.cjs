@@ -15,6 +15,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'unicorn'],
   rules: {
+    'no-console': 'off',
     'unicorn/prefer-node-protocol': 'off',
     'import/prefer-default-export': 'off',
     'no-restricted-syntax': [
@@ -23,6 +24,6 @@ module.exports = {
       'LabeledStatement',
       'WithStatement',
     ],
-    'no-await-in-loop': 'off'
+    'no-await-in-loop': 'off',
   },
 };
