@@ -4,7 +4,7 @@ import { runMigrations } from '@core/migration';
 import { Command } from '@oclif/core';
 
 export default class MigrateUp extends Command {
-  static description = 'describe the command here';
+  static description = 'Runs all pending migrations';
 
   static examples = ['<%= config.bin %> <%= command.id %>'];
 

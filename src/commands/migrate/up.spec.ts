@@ -2,6 +2,8 @@ import MigrateUp from './up';
 
 jest.mock('fs/promises');
 
+jest.mock('mysql2/promise');
+
 describe.only('migrate:up', () => {
   let stdout: string[];
 
@@ -16,6 +18,9 @@ describe.only('migrate:up', () => {
 
       return true;
     });
+
+    process.env.MUTO_DB_CONNECTION_STRING =
+      'mysql://test:test@localhost:3306/db';
   });
   it('should execute', async () => {
     await MigrateUp.run([]);
