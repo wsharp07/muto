@@ -1427,6 +1427,44 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@oclif/core@npm:^2.11.10":
+  version: 2.11.10
+  resolution: "@oclif/core@npm:2.11.10"
+  dependencies:
+    "@types/cli-progress": ^3.11.0
+    ansi-escapes: ^4.3.2
+    ansi-styles: ^4.3.0
+    cardinal: ^2.1.1
+    chalk: ^4.1.2
+    clean-stack: ^3.0.1
+    cli-progress: ^3.12.0
+    debug: ^4.3.4
+    ejs: ^3.1.8
+    fs-extra: ^9.1.0
+    get-package-type: ^0.1.0
+    globby: ^11.1.0
+    hyperlinker: ^1.0.0
+    indent-string: ^4.0.0
+    is-wsl: ^2.2.0
+    js-yaml: ^3.14.1
+    natural-orderby: ^2.0.3
+    object-treeify: ^1.1.33
+    password-prompt: ^1.1.2
+    semver: ^7.5.3
+    slice-ansi: ^4.0.0
+    string-width: ^4.2.3
+    strip-ansi: ^6.0.1
+    supports-color: ^8.1.1
+    supports-hyperlinks: ^2.2.0
+    ts-node: ^10.9.1
+    tslib: ^2.5.0
+    widest-line: ^3.1.0
+    wordwrap: ^1.0.0
+    wrap-ansi: ^7.0.0
+  checksum: af48510eccf09558aa097d34d58d9c314d345c4012b3e02de8c3f1214a90bde2c063752cfdd36c930ee1241978562c794f3c484df965e1fe734901de038737d7
+  languageName: node
+  linkType: hard
+
 "@oclif/core@npm:^2.8.7, @oclif/core@npm:^2.9.3, @oclif/core@npm:^2.9.4":
   version: 2.9.4
   resolution: "@oclif/core@npm:2.9.4"
@@ -7391,7 +7429,7 @@ __metadata:
   dependencies:
     "@databases/mysql": ^6.0.0
     "@databases/pg": ^5.4.1
-    "@oclif/core": ^2.9.4
+    "@oclif/core": ^2.11.10
     "@oclif/plugin-help": ^5.2.14
     "@oclif/plugin-plugins": ^3.1.8
     "@oclif/test": ^2.3.31
