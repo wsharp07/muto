@@ -1590,13 +1590,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oclif/test@npm:^2.3.31":
-  version: 2.3.31
-  resolution: "@oclif/test@npm:2.3.31"
+"@oclif/test@npm:^2.5.6":
+  version: 2.5.6
+  resolution: "@oclif/test@npm:2.5.6"
   dependencies:
-    "@oclif/core": ^2.9.3
-    fancy-test: ^2.0.29
-  checksum: 32feec07010f2f95161c23923ccfd086c2d5d7a6e8a1d49a09c35b0868cfaf9e9b4d0aabe05d670cd7f66b0474b4b9ecba7e9c61d96dc377b8fe0a7099006b67
+    "@oclif/core": ^2.15.0
+    fancy-test: ^2.0.42
+  checksum: 41411ab54dcf477ee013d6f1081c0d595e5a6c61202d65bef9bbc8f124634cd5f12246b23e559d7a06531ca4b18b697b95049502429618666340e8e332703997
   languageName: node
   linkType: hard
 
@@ -4519,9 +4519,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fancy-test@npm:^2.0.29":
-  version: 2.0.31
-  resolution: "fancy-test@npm:2.0.31"
+"fancy-test@npm:^2.0.42":
+  version: 2.0.42
+  resolution: "fancy-test@npm:2.0.42"
   dependencies:
     "@types/chai": "*"
     "@types/lodash": "*"
@@ -4529,9 +4529,9 @@ __metadata:
     "@types/sinon": "*"
     lodash: ^4.17.13
     mock-stdin: ^1.0.0
-    nock: ^13.3.2
+    nock: ^13.3.3
     stdout-stderr: ^0.1.9
-  checksum: 02062663793c4356c18d60d25bd942f8d85e20e608551b4af9f926cddbab7896787df49042e16585e7850bc80bbedef8c7bdb6e92a1f330e0651c4f06aaed03c
+  checksum: 48f802bcb70da9abbe1a8b136aef1912ea9346c16d4bb653f99c54d5d9c318831397f7f88ce3aee3960fb3a9f9a479032bc56e7e494390993cb9925be8b6d37a
   languageName: node
   linkType: hard
 
@@ -7586,7 +7586,7 @@ __metadata:
     "@oclif/core": ^2.15.0
     "@oclif/plugin-help": ^5.2.14
     "@oclif/plugin-plugins": ^3.1.8
-    "@oclif/test": ^2.3.31
+    "@oclif/test": ^2.5.6
     "@types/jest": ^29.5.4
     "@types/node": ^20.4.4
     "@typescript-eslint/eslint-plugin": ^6.1.0
@@ -7682,15 +7682,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nock@npm:^13.3.2":
-  version: 13.3.2
-  resolution: "nock@npm:13.3.2"
+"nock@npm:^13.3.3":
+  version: 13.3.6
+  resolution: "nock@npm:13.3.6"
   dependencies:
     debug: ^4.1.0
     json-stringify-safe: ^5.0.1
-    lodash: ^4.17.21
     propagate: ^2.0.0
-  checksum: 1d7d5fda1816a3a0d2cb47f10283db139fcd15be6975db6f9b260efa781d5f0eeadf9bd7aab6db61191c519dd99bcd4c5c061e77880341be60abc39cd6163c1f
+  checksum: 795f334a17ed294b829968c177190571720492cc5113e2aa5b9d382c6508d81c8f79f6afae32009abce94213b0b7c1a474d582acf87e2c169d620314ac0ae60c
   languageName: node
   linkType: hard
 
