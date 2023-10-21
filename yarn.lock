@@ -7271,15 +7271,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"memfs@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "memfs@npm:4.2.0"
+"memfs@npm:^4.6.0":
+  version: 4.6.0
+  resolution: "memfs@npm:4.6.0"
   dependencies:
     json-joy: ^9.2.0
     thingies: ^1.11.1
   peerDependencies:
     tslib: 2
-  checksum: d1d102c890fc4d7999280be5a3b906daec5cb1121e56a75dd96cd30ec75ab9fcf3311affa33146d5749b3ad82ecd8ff8a8f8ba638aaf6fae769ff0083b3d82c7
+  checksum: b32a35bee9f96dc011605f3bb39e74e6d2a5de51c952a77bb38a0dfabd3381c40ae382d27f385aa290edee8081597fb1a3b41a07bb3f775fd55312dc30ac1d9d
   languageName: node
   linkType: hard
 
@@ -7600,7 +7600,7 @@ __metadata:
     husky: ^8.0.0
     jest: ^29.6.4
     lint-staged: ^13.2.3
-    memfs: ^4.2.0
+    memfs: ^4.6.0
     oclif: ^3.10.0
     pinst: ^3.0.0
     prettier: 3.0.0
